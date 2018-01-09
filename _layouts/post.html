@@ -1,0 +1,95 @@
+---
+layout: compress
+---
+<html lang="{{ page.lang | default: site.lang | default: "en_US" }}">
+
+  {% include head.html %}
+
+  <body class="site">
+
+    {% if site.google_tag_manager %}
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+    {% endif %}
+
+    {% include header.html %}
+    
+    <!-- Using a post-specific image for the hero -->
+    <style>
+      .hero {
+        background: #dde5ea url("{{site.url}}/assets/img/posts/{{page.asset-src}}/{{page.featured-img}}_hero.jpg") no-repeat 50% / cover;
+      }
+    </style>
+
+    <div class="hero">
+      <div class="hero__wrap">
+        <h1 class="hero__title">{{ page.title }}</h1>
+        <p class="hero__meta">
+          <span>
+            <time>{{ page.date | date_to_string }}</time>&nbsp;
+          </span>
+          <span>
+            {% assign words = content | number_of_words %}
+              {% if words < 360 %}
+                1 min
+              {% else %}
+                {{ words | divided_by:180 }} mins
+            {% endif %} read
+          	&nbsp;
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <main class="site__content">
+      <div class="container">
+        <article class="post-content" itemprop="articleBody">
+
+          {{ content }}
+
+        </article>
+      </div>
+      <div class="controls">
+        <div class="container">
+          <div class="post-content">
+            <div class="control">
+              {% if page.previous.url %}
+
+                <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+              {% endif %}
+            </div>
+
+            <div class="control">
+              {% if page.next.url %}
+                <a class="next" href="{{page.next.url}}">&laquo; {{page.next.title}}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% if site.disqus.shortname %}
+
+        <div class="comments">
+          <div class="container">
+            <div class="post-content">
+
+              {% include disqus.html %}
+
+            </div>
+          </div>
+        </div>
+
+      {% endif %}
+
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

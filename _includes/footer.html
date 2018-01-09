@@ -1,0 +1,31 @@
+<footer class="footer">
+  <div class="container">
+    <nav class="social">
+      {% if site.github_username %}
+        <a class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/{{ site.github_username }}">
+          <i class="fab fa-github fa-3x"></i>
+        </a>
+      {% endif %}
+      {% if site.twitter_username %}
+        <a class="social__link" target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/{{ site.twitter_username }}">
+          <i class="fab fa-twitter fa-3x"></i>
+        </a>
+      {% endif %}
+      {% if site.instagram_username %}
+        <a class="social__link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/{{ site.instagram_username }}" title="Instagram">
+          <i class="fab fa-instagram fa-3x"></i>
+        </a>
+      {% endif %}
+      {% if site.facebook_username %}
+        <a class="social__link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
+          <i class="fab fa-facebook fa-3x"></i>
+        </a>
+      {% endif %}
+      <a class="social__link" title="Current Location" href="/current-location/">
+        <i class="fas fa-map-marker fa-3x"></i>
+      </a>
+    </nav>
+    <span>&copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}. All rights reserved.</span>
+  </div>
+</footer>
+<script async src="{{ "/assets/js/bundle.js" | relative_url }}"></script>

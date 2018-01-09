@@ -1,0 +1,10 @@
+Image Sizes:
+	Feature Thumb: 500 x 281
+	Thumb 2x: 1000 x 562
+	Hero: ~1100x700 - adjust so main focus of image is near center
+
+Lazy Load Images:
+	https://afarkas.github.io/lazysizes/index.html
+	placehold = super low res
+	thumb = high res, small
+	2x = high res, medium
