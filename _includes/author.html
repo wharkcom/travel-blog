@@ -1,0 +1,40 @@
+{% if include.author %}
+	{% assign author = site.data.people[include.author] %}
+{% elsif page.author %}
+	{% assign author = site.data.people[page.author] %}
+{% else %}
+	{% assign error = true %}
+{% endif %}
+
+{% if include.style %}
+	{% assign style = include.style %}
+{% else %}
+	{% assign style = "left" %}
+{% endif %}
+
+{% if error %}
+<p class="error">Error: No author is specified</p>
+
+{% else %}
+<div class="about-block">
+	<div class="pull-left">
+		<img src="{{author.pic}}" alt="{{author.name}}" />
+	</div>
+	<div class="pull-right">
+		<strong>{{author.name}}</strong>
+		<p>{{author.about}}</p>
+		{% if author.links %}
+			<ul class="rlist--inline">
+			{% for link in author.links %}
+				<li>
+					<a href="{{link.link}}">{{link.name}}</a>
+				</li>
+			{% endfor %}
+			</ul>
+		{% endif %}
+	</div>
+</div>
+
+{% endif %}
+
+

@@ -6,9 +6,60 @@
   @include breakpoint($md) {
     padding-top: 5em;
   }
+
+  img {
+  	display: block;
+  	margin: 1.25rem auto;
+  }
+  figure {
+    margin: 1.25rem auto;
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: smaller;
+    font-weight: 500;
+  }
 }
 
 .comments {
   padding: 50px 0;
   background-color: #fafafa;
+}
+
+blockquote {
+  background: #EDEDED;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+
+  &:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  p {
+    display: inline;
+  }
+}
+
+.bigfoot-footnote {
+  img {
+    margin: 0;
+  }
+  //Need something other than the image to force the footnote to expand the full width.
+  .image-hack {
+    margin: 0;
+    display: block;
+    width: 310px;
+  }
 }

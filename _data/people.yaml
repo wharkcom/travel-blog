@@ -1,0 +1,19 @@
+Will: 
+  name: Will
+  pic: "/assets/img/about/will.jpg"
+  about: "This is some text about Will."
+  links:
+    - name: "Facebook"
+      link: "/link/to/facebook"
+    - name: "Instagram"
+      link: "/link/to/instagram"
+
+Sushila:
+  name: Sushila
+  pic: "/assets/img/about/sushila.jpg"
+  about: "This is some text about Sushila."
+  links:
+    - name: "Facebook"
+      link: "/link/to/facebook"
+    - name: "Instagram"
+      link: "/link/to/instagram"

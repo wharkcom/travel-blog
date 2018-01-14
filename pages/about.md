@@ -5,6 +5,7 @@ permalink: /about/
 ---
 # The Humans
 Stuff about us here.
+{% include author.html author="Will" %}
 
 # The Kitties
 Stuff about Kitties here.
